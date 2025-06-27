@@ -22,7 +22,7 @@ jobs:
   
       - uses: gradle/actions/setup-gradle@v3
   
-      - run: gradle assembleRelease
+      - run: gradle build
 
 
       - name: Checkout glog-action repository
@@ -36,7 +36,7 @@ jobs:
       - name: Run Glog.AI from private repo
         uses: ./.github/glog-action
         with:
-          lang: 'java'
+          lang: 'kotlin'
           debug: 'false'
           upload: 'true'
           github-token: ${{ secrets.PAT_TOKEN }}
